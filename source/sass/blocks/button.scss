@@ -1,0 +1,23 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $white-color;
+  border-radius: 3px;
+  border: 1px solid $white-color;
+  min-height: 40px;
+  padding: 10px 15px 10px;
+  transition: 0.3s ease;
+  user-select: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-family: $ff-roboto;
+  line-height: 16px;
+  min-width: 160px;
+
+  &:hover {
+    color: $blue-color;
+    border-color: $blue-color;
+  }
+}
