@@ -1,0 +1,45 @@
+.page {
+  font-family: $ff-mono;
+  font-size: $fz-default;
+  line-height: $lh-default;
+  font-weight: $fw-default;
+  font-style: normal;
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+.page__body {
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  min-height: 100%;
+  align-content: start;
+  width: 100%;
+}
+
+.page__leveler {
+  margin: 0 18.23%;
+
+  @media (min-width: $desktop) and (max-width: $vp-1440) {
+    margin: 0 8%;
+  }
+
+  @media (max-width: $tablet) {
+    margin: 0 6.51%;
+  }
+
+  @media (max-width: $mobile) {
+    margin: 0 7.81%;
+  }
+}
+
+.page__header {
+  padding: 30px 0;
+
+  @media (max-width: $tablet) {
+    padding: 20px 0;
+  }
+
+  @media (max-width: $mobile) {
+    padding: 15px 0 20px;
+  }
+}

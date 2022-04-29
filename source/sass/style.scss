@@ -1,7 +1,7 @@
 // Vendor
 // ---------------------------------
 
-@import "vendor/normalize";
+// @import "vendor/normalize";
 // Swiper 7.4.1
 // @import "vendor/swiper";
 
@@ -9,18 +9,16 @@
 // ---------------------------------
 
 @import "variables";
-@import "mixins";
 @import "global/fonts";
 @import "global/reboot";
-@import "global/utils";
-@import "global/container";
+
 
 // Blocks
 // ---------------------------------
-
-@import "blocks/btn";
-@import "blocks/modal";
-
+@import "./blocks/page.scss";
+@import "./blocks/header.scss";
+@import "./blocks/contacts.scss";
+@import "./blocks/button.scss";
 // ---------------------------------
 
 // ❗❗❗ запрещено использовать изображения в css, касается как jpg \ png, так и svg

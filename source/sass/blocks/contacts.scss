@@ -1,0 +1,74 @@
+
+.contacts {
+  justify-self: center;
+}
+
+.contacts ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(auto-fill, 250px);
+  max-width: 600px;
+  row-gap: 20px;
+  margin-bottom: 10px;
+
+  @media (min-width: $desktop) and (max-width: $vp-1440) {
+    grid-template-columns: max-content max-content;
+    gap: 20px;
+    min-width: auto;
+  }
+
+  @media (max-width: $tablet) {
+    justify-content: end;
+    min-width: 100px;
+    max-width: 300px;
+    grid-template-columns: repeat(auto-fit, 40px);
+    margin-bottom: 15px;
+    gap: 20px;
+  }
+
+  @media (max-width: $mobile) {
+    margin-bottom: 8px;
+    max-width: 200px;
+  }
+}
+
+.contacts li {
+  margin: 0;
+  padding: 0;
+}
+
+.contacts a {
+  color: $white-color;
+  display: grid;
+  grid-template-columns: min-content auto;
+  align-items: center;
+  gap: 19px;
+  line-height: 17px;
+  transition: 0.3s ease;
+
+  &:hover {
+    color: $blue-color;
+  }
+}
+
+.contacts svg {
+  color: $blue-color;
+
+  @media (max-width: $tablet) {
+    &:hover {
+      color: $white-color;
+    }
+  }
+}
+
+.contacts p {
+  margin: 0;
+  padding: 0;
+
+  @media (max-width: $tablet) {
+    display: none;
+  }
+}
