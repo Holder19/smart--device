@@ -1,0 +1,108 @@
+.intro__bg {
+  --intro-img: url("../img/content/intro-bg-desktop@1x.png");
+  background: $intro-gradient, var(--intro-img) no-repeat;
+  width: 100%;
+  min-height: 880px;
+  z-index: -1;
+  position: absolute;
+  top: -115px;
+  background-size: cover;
+  background-color: $color-default-font;
+
+  @media (min-resolution: 2dppx) {
+    --intro-img: url("../img/content/intro-bg-desktop@2x.png");
+  }
+
+  @media (max-width: $tablet) {
+    --intro-img: url("../img/content/intro-bg-tablet@1x.png");
+    top: -95px;
+    background-size: cover;
+    min-height: 640px;
+
+    @media (min-resolution: 2dppx) {
+      --intro-img: url("../img/content/intro-bg-tablet@2x.png");
+      background-size: 1396px 640px;
+      background-position-x: -123px;
+      background-position-y: 0;
+    }
+  }
+
+  @media (min-width: $vp-320) and (max-width: $mobile) {
+    --intro-img: url("../img/content/intro-bg-mobile@1x.png");
+    min-height: 560px;
+    background-position-y: 25px;
+
+    @media (min-resolution: 2dppx) {
+      --intro-img: url("../img/content/intro-bg-mobile@2x.png");
+      background-position: -285px -20px;
+    }
+  }
+}
+
+.intro__wrapper-content {
+  z-index: 1;
+  padding: 190px 123px 120px;
+  display: grid;
+
+  @media (max-width: $tablet) {
+    padding: 84px 0 80px;
+  }
+
+  @media (max-width: $mobile) {
+    padding: 80px 0;
+  }
+}
+
+.intro__wrapper-content h2 {
+  color: $white-color;
+  font-size: 80px;
+  line-height: 94px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+  font-family: $ff-roboto;
+  margin-bottom: 30px;
+
+  @media (max-width: $tablet) {
+    font-size: 64px;
+    line-height: 75px;
+    margin-bottom: 0;
+  }
+
+  @media (max-width: $mobile) {
+    font-size: 36px;
+    line-height: 42px;
+    margin-bottom: 8px;
+  }
+}
+
+.intro__wrapper-content p {
+  margin: 0;
+  padding: 0;
+  color: $white-color;
+  font-size: 22px;
+  line-height: 155%;
+  max-width: 675px;
+  margin-bottom: 50px;
+
+  @media (max-width: $tablet) {
+    max-width: 670px;
+    margin-bottom: 58px;
+  }
+
+  @media (max-width: $mobile) {
+    font-size: 14px;
+    margin-bottom: 45px;
+  }
+}
+
+.intro__wrapper-content a {
+  @media (max-width: $tablet) {
+    margin-left: 45px;
+  }
+
+  @media (max-width: $mobile) {
+    margin-left: 0;
+  }
+}

@@ -15,9 +15,30 @@
   font-family: $ff-roboto;
   line-height: 16px;
   min-width: 160px;
+  letter-spacing: 0.05em;
 
   &:hover {
     color: $blue-color;
     border-color: $blue-color;
+  }
+
+  &--feedback {
+    background-color: $blue-color;
+    font-size: 18px;
+    line-height: 21px;
+    padding: 16px 28px 17px;
+    width: max-content;
+    border: none;
+
+    &:hover {
+      background-color: $color-default-font;
+    }
+
+    @media (max-width: $mobile) {
+      padding: 10px 30px;
+      font-size: 14px;
+      line-height: 16px;
+      width: auto;
+    }
   }
 }

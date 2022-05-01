@@ -2,8 +2,20 @@ import {iosVhFix} from './utils/ios-vh-fix';
 const accordions = document.querySelectorAll('.accordion');
 const accordionsTitles = document.querySelectorAll('#accordion-title');
 
-const accordionToggle = () => {
 
+const replacingTextOnButton = () => {
+  const buttonFeedback = document.querySelector('#button-feedback');
+  buttonFeedback.innerText = 'бесплатная консультация';
+};
+
+const breakpoint = window.matchMedia('(max-width: 767px)');
+const breakpointChecker = () => {
+  if (breakpoint.matches) {
+    replacingTextOnButton();
+  }
+};
+
+const accordionToggle = () => {
   accordions.forEach((accordion) => {
 
     if (accordion.classList.contains('accordion--nojs')) {
@@ -41,6 +53,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   iosVhFix();
   accordionToggle();
+  breakpointChecker();
 });
 
 // ---------------------------------
@@ -57,13 +70,5 @@ window.addEventListener('DOMContentLoaded', () => {
 // url до иконок пинов карты, настройки автопрокрутки слайдера, url к json и т.д.
 
 // для адаптивного JS используейтся matchMedia и addListener
-// const breakpoint = window.matchMedia(`(min-width:1024px)`);
-// const breakpointChecker = () => {
-//   if (breakpoint.matches) {
-//   } else {
-//   }
-// };
-// breakpoint.addListener(breakpointChecker);
-// breakpointChecker();
 
 // используйте .closest(el)
