@@ -1,0 +1,27 @@
+.social ul {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 40px);
+  gap: 20px;
+  justify-content: center;
+}
+
+.social li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.social a {
+  cursor: pointer;
+}
+
+.social svg {
+  color: $white-color;
+  transition: 0.3s ease;
+
+  &:hover {
+    color: $blue-color;
+  }
+}

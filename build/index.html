@@ -46,7 +46,114 @@
       </div>
     </header>
     <main class="page__main main">m</main>
-    <footer class="page__footer footer">asdf</footer>
+
+    <footer class="page__footer footer">
+      <div class="page__leveler page__leveler--mobile-off">
+        <div class="footer__inner-wrapper">
+          <div class="footer__logo-wrapper">
+            <a class="footer__logo">
+              <div class="logo__icon-wrapper">
+                <img src="./img/sprite/icon-logo.svg" alt="Логотип" width="215" height="55">
+              </div>
+            </a>
+
+            <section class="footer__social social">
+              <h2 class="visually-hidden">Мы в социальных сетях</h2>
+              <ul>
+                <li>
+                  <a href="#">
+                    <svg width ="30" height = "30">
+                      <use xlink:href ="./img/sprite_auto.svg#icon-fb"></use>
+                    </svg>
+                    <span class="visually-hidden">Фейсбук</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <svg width ="30" height = "30">
+                      <use xlink:href ="./img/sprite_auto.svg#icon-ok"></use>
+                    </svg>
+                    <span class="visually-hidden">Одноклассники</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <svg width ="30" height = "30">
+                      <use xlink:href ="./img/sprite_auto.svg#icon-vk"></use>
+                    </svg>
+                    <span class="visually-hidden">Вконтакте</span>
+                  </a>
+                </li>
+              </ul>
+            </section>
+          </div>
+
+          <section class="footer__chapters chapters accordion accordion--nojs" data-accordion="accordion" id="chapters">
+            <h2 id="accordion-title" data-accordion="#chapters">Разделы сайта</h2>
+            <div class="accordion__wrapper">
+              <ul>
+                <li data-chapter="company">
+                  <a href="#">
+                    О Компаниии
+                  </a>
+                </li>
+                <li data-chapter="products">
+                  <a href="#">
+                    Продукты
+                  </a>
+                </li>
+                <li data-chapter="production">
+                  <a href="#">
+                    Производство печатных<br>плат
+                  </a>
+                </li>
+                <li data-chapter="mounting">
+                  <a href="#">
+                    Монтаж печатных плат
+                  </a>
+                </li>
+                <li data-chapter="accessories">
+                  <a href="#">
+                    Комплектующие
+                  </a>
+                </li>
+                <li data-chapter="delivery">
+                  <a href="#">
+                    Доставка
+                  </a>
+                </li>
+                <li data-chapter="contacts">
+                  <a href="#">
+                    Контакты
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <section class="footer__address address accordion accordion--nojs" data-accordion="accordion" id="address">
+            <h2 id="accordion-title" data-accordion="#address">Наш офис</h2>
+            <div class="accordion__wrapper">
+              <ul>
+                <li>
+                  <a href="#">
+                    г. Мытищи, Олимпийский проспект,<br> д.10
+                  </a>
+                </li>
+                <li>
+                  <a href="tel:+7 (495) 589-40-50">+7 (495) 589-40-50</a>
+                </li>
+                <li>
+                  <a href="tel:+7 (925) 389-58-29">+7 (925) 389-58-29</a>
+                </li>
+                <li>
+                  <a href="tel:+7 (925) 364-78-13">+7 (925) 364-78-13</a>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </div>
+    </footer>
     <script src="js/main.min.js"></script>
   </body>
 </html>

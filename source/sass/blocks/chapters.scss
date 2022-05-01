@@ -1,0 +1,98 @@
+.chapters {
+  @media (max-width: $mobile) {
+    border-top: 1px solid $border-footer-color;
+    border-bottom: 1px solid $border-footer-color;
+    padding: 20px 7.81%;
+  }
+}
+
+.chapters h2 {
+  margin: 0;
+  padding: 0;
+  color: $color-default-white;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 16px;
+  font-family: $ff-roboto;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 20px;
+}
+
+.chapters ul {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 10px;
+  min-width: 470px;
+
+  @media (min-width: $desktop) and (max-width: $vp-1280) {
+    grid-template-columns: none;
+    min-width: auto;
+  }
+
+  @media (max-width: $tablet) {
+    grid-template-columns: none;
+    min-width: auto;
+  }
+}
+
+.chapters li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.chapters li[data-chapter="company"] {
+  @media (min-width: $vp-1280) and (max-width: $vp-1920) {
+    order: 1;
+  }
+}
+
+.chapters li[data-chapter="products"] {
+  @media (min-width: $vp-1280) and (max-width: $vp-1920) {
+    order: 3;
+  }
+}
+
+.chapters li[data-chapter="production"] {
+  @media (min-width: $vp-1280) and (max-width: $vp-1920) {
+    order: 5;
+  }
+}
+
+.chapters li[data-chapter="mounting"] {
+  @media (min-width: $vp-1280) and (max-width: $vp-1920) {
+    order: 7;
+  }
+}
+
+.chapters li[data-chapter="accessories"] {
+  @media (min-width: $vp-1280) and (max-width: $vp-1920) {
+    order: 2;
+  }
+}
+
+.chapters li[data-chapter="delivery"] {
+  @media (min-width: $vp-1280) and (max-width: $vp-1920) {
+    order: 4;
+  }
+}
+
+.chapters li[data-chapter="contacts"] {
+  @media (min-width: $vp-1280) and (max-width: $vp-1920) {
+    order: 6;
+  }
+}
+
+.chapters a {
+  line-height: 22px;
+  color: $color-default-white;
+  opacity: 0.7;
+  transition: 0.3s ease;
+
+  &:hover {
+    opacity: 1;
+  }
+}

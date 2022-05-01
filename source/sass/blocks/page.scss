@@ -19,7 +19,7 @@
 .page__leveler {
   margin: 0 18.23%;
 
-  @media (min-width: $desktop) and (max-width: $vp-1440) {
+  @media (min-width: $desktop) and (max-width: $vp-1600) {
     margin: 0 8%;
   }
 
@@ -29,6 +29,12 @@
 
   @media (max-width: $mobile) {
     margin: 0 7.81%;
+  }
+
+  &--mobile-off {
+    @media (max-width: $mobile) {
+      display: contents;
+    }
   }
 }
 
@@ -41,5 +47,17 @@
 
   @media (max-width: $mobile) {
     padding: 15px 0 20px;
+  }
+}
+
+.page__footer {
+  padding: 55px 0;
+
+  @media (max-width: $tablet) {
+    padding: 50px 0;
+  }
+
+  @media (max-width: $mobile) {
+    padding: 35px 0;
   }
 }

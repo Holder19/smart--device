@@ -1,0 +1,58 @@
+.accordion h2 {
+  @media (max-width: $mobile) {
+    margin: 0;
+    position: relative;
+    display: grid;
+    align-items: center;
+    transition: 0.3s ease;
+
+    &::after,
+    &::before {
+      content: "";
+      width: 15px;
+      height: 1px;
+      background-color: $white-color;
+      position: absolute;
+      justify-self: end;
+    }
+  }
+}
+
+.accordion--nojs h2,
+.accordion--open h2 {
+  @media (max-width: $mobile) {
+    padding-bottom: 15px;
+
+    &::before,
+    &::after {
+      margin-bottom: 15px;
+    }
+
+    &::before {
+      transform: rotate(0deg);
+    }
+  }
+}
+
+.accordion--close h2 {
+  @media (max-width: $mobile) {
+    &::before {
+      transform: rotate(90deg);
+    }
+  }
+}
+
+.accordion--nojs .accordion__wrapper,
+.accordion--open .accordion__wrapper {
+  @media (max-width: $mobile) {
+    overflow: visible;
+    max-height: none;
+  }
+}
+
+.accordion--close .accordion__wrapper {
+  @media (max-width: $mobile) {
+    overflow: hidden;
+    max-height: 0;
+  }
+}
