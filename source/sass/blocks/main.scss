@@ -1,0 +1,16 @@
+.main__intro {
+  margin-bottom: 280px;
+
+  @media (max-width: $tablet) {
+    margin-bottom: 205px;
+  }
+
+  @media (max-width: $mobile) {
+    margin-bottom: 160px;
+    min-height: 380px;
+  }
+}
+
+.main__features {
+  margin-bottom: 120px;
+}

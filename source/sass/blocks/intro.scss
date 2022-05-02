@@ -29,8 +29,8 @@
 
   @media (min-width: $vp-320) and (max-width: $mobile) {
     --intro-img: url("../img/content/intro-bg-mobile@1x.png");
-    min-height: 560px;
-    background-position-y: 25px;
+    min-height: 585px;
+    background-position-y: 10px;
 
     @media (min-resolution: 2dppx) {
       --intro-img: url("../img/content/intro-bg-mobile@2x.png");
