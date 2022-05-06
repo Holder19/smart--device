@@ -1,18 +1,39 @@
 import {iosVhFix} from './utils/ios-vh-fix';
 const accordions = document.querySelectorAll('.accordion');
 const accordionsTitles = document.querySelectorAll('#accordion-title');
-
+const breakpoint = window.matchMedia('(max-width: 767px)');
+const detailsItems = document.querySelectorAll('#details-item');
+const detailsButton = document.querySelector('#details-button');
 
 const replacingTextOnButton = () => {
   const buttonFeedback = document.querySelector('#button-feedback');
   buttonFeedback.innerText = 'бесплатная консультация';
 };
 
-const breakpoint = window.matchMedia('(max-width: 767px)');
 const breakpointChecker = () => {
   if (breakpoint.matches) {
     replacingTextOnButton();
+    const hiddenContent = document.querySelector('[data-hidden="hidden"]');
+
+    if (!hiddenContent.classList.contains('about__item--hidden')) {
+      hiddenContent.classList.add('about__item--hidden');
+    } else {
+      hiddenContent.classList.remove('about__item--hidden');
+    }
   }
+};
+
+const onDetailsButtonClick = () => {
+
+  detailsItems.forEach((item) => {
+    if (item.classList.contains('about__item--hidden')) {
+      item.classList.remove('about__item--hidden');
+      detailsButton.innerText = 'Свернуть';
+    } else {
+      item.classList.add('about__item--hidden');
+      detailsButton.innerText = 'Подробнее';
+    }
+  });
 };
 
 const accordionToggle = () => {
@@ -54,6 +75,7 @@ window.addEventListener('DOMContentLoaded', () => {
   iosVhFix();
   accordionToggle();
   breakpointChecker();
+  detailsButton.addEventListener('click', onDetailsButtonClick);
 });
 
 // ---------------------------------

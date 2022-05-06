@@ -16,6 +16,7 @@
   line-height: 16px;
   min-width: 160px;
   letter-spacing: 0.05em;
+  cursor: pointer;
 
   &:hover {
     color: $blue-color;
@@ -39,6 +40,27 @@
       font-size: 14px;
       line-height: 16px;
       width: auto;
+    }
+  }
+
+  &--details {
+    color: $blue-color;
+    background-color: inherit;
+    border-color: $blue-color;
+    font-weight: 700;
+    padding: 14px 13px 12px;
+    min-width: 180px;
+
+    @media (max-width: $mobile) {
+      min-width: 160px;
+      padding: 8px 15px;
+      min-height: auto;
+    }
+
+    &:hover {
+      color: $white-color;
+      background-color: $blue-color;
+      border-color: $white-color;
     }
   }
 }

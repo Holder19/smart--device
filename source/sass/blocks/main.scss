@@ -13,4 +13,16 @@
 
 .main__features {
   margin-bottom: 120px;
+
+  @media (max-width: $tablet) {
+    margin-bottom: 80px;
+  }
+
+  @media (max-width: $mobile) {
+    margin-bottom: 50px;
+  }
+}
+
+.main__about {
+  margin-bottom: 120px;
 }
