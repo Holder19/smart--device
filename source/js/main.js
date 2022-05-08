@@ -4,15 +4,17 @@ const accordionsTitles = document.querySelectorAll('#accordion-title');
 const breakpoint = window.matchMedia('(max-width: 767px)');
 const detailsItems = document.querySelectorAll('#details-item');
 const detailsButton = document.querySelector('#details-button');
+const buttonFeedback = document.querySelector('#button-feedback');
+const headingProducts = document.querySelector('#heading-products');
 
-const replacingTextOnButton = () => {
-  const buttonFeedback = document.querySelector('#button-feedback');
-  buttonFeedback.innerText = 'бесплатная консультация';
+const replacingTextOnElement = (element, text) => {
+  element.innerText = `${text}`;
 };
 
 const breakpointChecker = () => {
   if (breakpoint.matches) {
-    replacingTextOnButton();
+    replacingTextOnElement(buttonFeedback, 'бесплатная консультация');
+    replacingTextOnElement(headingProducts, 'Товары и услуги Smart Device');
     const hiddenContent = document.querySelector('[data-hidden="hidden"]');
 
     if (!hiddenContent.classList.contains('about__item--hidden')) {
