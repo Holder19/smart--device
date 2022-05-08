@@ -1,0 +1,143 @@
+.products {
+  background-color: $color-default-font;
+  padding: 63px 0 140px;
+
+  @media (max-width: $tablet) {
+    padding-top: 54px;
+    padding-bottom: 75px;
+  }
+
+  @media (max-width: $mobile) {
+    padding-top: 50px;
+    padding-bottom: 86px;
+  }
+}
+
+.products h2 {
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 51px;
+  font-family: $ff-roboto;
+  color: $color-default-white;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 55px;
+
+  @media (max-width: $tablet) {
+    margin-bottom: 38px;
+  }
+
+  @media (max-width: $mobile) {
+    font-size: 28px;
+    line-height: 39px;
+    margin-bottom: 26px;
+    max-width: 200px;
+  }
+}
+
+.products__content-wrapper ul {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 85px;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: $tablet) {
+    grid-template-columns: none;
+    gap: 30px;
+  }
+}
+
+.products__content-wrapper li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.products__content-wrapper a {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: max-content max-content;
+}
+
+.products__content-wrapper h3 {
+  grid-column: 1/1;
+  grid-row: 1/1;
+  z-index: 1;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  margin: 0;
+  padding: 0;
+  color: $color-default-white;
+  max-width: 173px;
+  margin-top: 47px;
+  margin-left: 40px;
+  font-family: $ff-roboto;
+
+  @media (max-width: $tablet) {
+    margin-top: 37px;
+    margin-left: 45px;
+  }
+
+  @media (max-width: $mobile) {
+    font-size: 18px;
+    margin: 26px 0 0 30px;
+    max-width: 156px;
+  }
+}
+
+.products__content-wrapper br {
+  display: none;
+
+  @media (max-width: $tablet) {
+    display: block;
+  }
+}
+
+.products__img-wrapper {
+  grid-column: 1/1;
+  grid-row: 1/-1;
+}
+
+.products__content-wrapper img {
+  opacity: 0.5;
+  transition: 0.6s ease;
+  object-fit: cover;
+
+  @media (max-width: $tablet) {
+    width: 670px;
+    height: 250px;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.products__content-wrapper {
+  max-width: 1220px;
+}
+
+.products__content-wrapper button {
+  grid-column: 1/-1;
+  grid-row: 2/2;
+  width: 60px;
+  height: 60px;
+  background-color: $blue-color;
+  justify-self: end;
+  align-self: flex-end;
+  border: none;
+  z-index: 1;
+
+  @media (max-width: $mobile) {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.products__content-wrapper svg {
+  fill: none;
+}

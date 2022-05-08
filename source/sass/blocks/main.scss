@@ -24,5 +24,9 @@
 }
 
 .main__about {
-  margin-bottom: 120px;
+  margin-bottom: 100px;
+
+  @media (max-width: $tablet) {
+    margin-bottom: 80px;
+  }
 }
