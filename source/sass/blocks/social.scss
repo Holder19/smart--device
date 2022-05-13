@@ -5,6 +5,13 @@
   grid-template-columns: repeat(3, 40px);
   gap: 20px;
   justify-content: center;
+
+  @media (max-width: $tablet) {
+    min-width: 140px;
+    justify-content: initial;
+    gap: 16px;
+    margin-right: -10px;
+  }
 }
 
 .social li {
