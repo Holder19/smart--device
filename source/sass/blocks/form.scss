@@ -1,0 +1,249 @@
+.form {
+  position: relative;
+  background: $blue-color;
+  padding: 161px 0 12.99%;
+  min-height: 840px;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 838px;
+    background-color: $color-default-font;
+    opacity: 0.5;
+    clip-path: polygon(0 0, 51% 0, 0 100%);
+    top: 0;
+
+    @media (max-width: $tablet) {
+      display: none;
+    }
+  }
+
+  @media (max-width: $tablet) {
+    padding: 43px 0 125px;
+    min-height: 580px;
+  }
+
+  @media (max-width: $mobile) {
+    padding: 46px 0 88px;
+  }
+}
+
+.form__layout-wrapper {
+  display: grid;
+  grid-template-columns: max-content auto;
+  gap: 5%;
+  z-index: 1;
+  position: relative;
+
+  @media (min-width: $vp-1920) {
+    gap: 9.8%;
+  }
+
+  @media (max-width: $tablet) {
+    display: block;
+    grid-template-columns: none;
+  }
+}
+
+.form img {
+  width: 300px;
+  height: auto;
+
+  @media (min-width: 1800px) {
+    width: 510px;
+    height: 285px;
+  }
+
+  @media (min-width: $desktop) and (max-width: $vp-1280) {
+    width: 250px;
+  }
+}
+
+.form__img-wrapper {
+  align-self: center;
+  padding-top: 20px;
+
+  @media (max-width: $tablet) {
+    display: none;
+  }
+}
+
+.form__wrapper {
+  max-width: 580px;
+
+  @media (max-width: $tablet) {
+    max-width: inherit;
+  }
+}
+
+.form__wrapper h2 {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 51px;
+  font-family: $ff-roboto;
+  color: $color-default-white;
+  margin-bottom: 15px;
+
+  @media (max-width: $tablet) {
+    margin-bottom: 10px;
+  }
+
+  @media (max-width: $mobile) {
+    font-size: 30px;
+    line-height: 42px;
+    margin-bottom: 7px;
+  }
+}
+
+.form__wrapper p {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  line-height: 22px;
+  color: $color-default-white;
+  margin-bottom: 35px;
+
+  @media (max-width: $tablet) {
+    margin-bottom: 25px;
+  }
+
+  @media (max-width: $mobile) {
+    font-size: 14px;
+    line-height: 19px;
+    margin-bottom: 35px;
+  }
+}
+
+.form__wrapper ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 35px;
+
+  @media (max-width: $mobile) {
+    margin-bottom: 12px;
+  }
+}
+
+.form__wrapper li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-grow: 1;
+
+  @media (max-width: $mobile) {
+    margin-bottom: 20px;
+  }
+}
+
+.form__wrapper li[data-form="textarea"] {
+  width: 98%;
+}
+
+.form__wrapper input,
+.form__wrapper textarea {
+  background-color: $bg-form-color;
+  padding: 17px;
+  border-radius: 3px;
+  border: none;
+  font-family: $ff-mono;
+  flex-grow: 1;
+  color: $white-color;
+
+  &::placeholder {
+    font-size: 16px;
+    line-height: 22px;
+    color: $color-default-white;
+  }
+}
+
+.form__wrapper input[type="text"] {
+  margin-right: 30px;
+  margin-bottom: 20px;
+
+  @media (max-width: $mobile) {
+    margin: 0;
+  }
+}
+
+.form__wrapper textarea {
+  min-height: 155px;
+  padding: 25px 15px;
+
+  @media (max-width: $mobile) {
+    min-height: 180px;
+  }
+}
+
+.form__submit-wrapper {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 9%;
+
+  @media (max-width: $tablet) {
+    gap: 84px;
+    grid-template-columns: max-content max-content;
+  }
+
+  @media (max-width: $mobile) {
+    grid-template-columns: none;
+    gap: 25px;
+  }
+}
+
+.form__submit-wrapper input[type="checkbox"] + label {
+  color: $color-default-white;
+  opacity: 0.8;
+  align-self: end;
+  font-size: 14px;
+  line-height: 16px;
+  position: relative;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 10px;
+  align-items: center;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    width: 15px;
+    height: 15px;
+    background-color: transparent;
+    border-radius: 2px;
+    border: 1px solid $color-default-white;
+  }
+
+  @media (max-width: $tablet) {
+    max-width: 230px;
+    align-self: center;
+  }
+
+  @media (max-width: $mobile) {
+    margin-left: 5px;
+  }
+}
+
+.form__submit-wrapper input[type="checkbox"]:focus-visible + label::before {
+  box-shadow: 0 0 0 0.2em $color-default-font;
+}
+
+.form__submit-wrapper input[type="checkbox"]:checked + label {
+  &::after {
+    content: "";
+    width: 6px;
+    height: 8px;
+    position: absolute;
+    border-top: 2px solid $color-default-white;
+    border-left: 2px solid $color-default-white;
+    transform: rotate(-135deg);
+    top: 10px;
+    left: 5px;
+  }
+}

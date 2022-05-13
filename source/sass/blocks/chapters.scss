@@ -2,7 +2,7 @@
   @media (max-width: $mobile) {
     border-top: 1px solid $border-footer-color;
     border-bottom: 1px solid $border-footer-color;
-    padding: 20px 7.81%;
+    padding: 20px 7.81% 23px;
   }
 }
 
@@ -17,14 +17,19 @@
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin-bottom: 20px;
+
+  @media (max-width: $tablet) {
+    margin-bottom: 25px;
+  }
 }
 
 .chapters ul {
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: max-content max-content;
   gap: 10px;
+  column-gap: 50px;
   min-width: 470px;
 
   @media (min-width: $desktop) and (max-width: $vp-1280) {
@@ -35,6 +40,7 @@
   @media (max-width: $tablet) {
     grid-template-columns: none;
     min-width: auto;
+    gap: 7px;
   }
 }
 
@@ -45,43 +51,43 @@
 }
 
 .chapters li[data-chapter="company"] {
-  @media (min-width: $vp-1280) and (max-width: $vp-1920) {
+  @media (min-width: $vp-1280) {
     order: 1;
   }
 }
 
 .chapters li[data-chapter="products"] {
-  @media (min-width: $vp-1280) and (max-width: $vp-1920) {
+  @media (min-width: $vp-1280) {
     order: 3;
   }
 }
 
 .chapters li[data-chapter="production"] {
-  @media (min-width: $vp-1280) and (max-width: $vp-1920) {
+  @media (min-width: $vp-1280) {
     order: 5;
   }
 }
 
 .chapters li[data-chapter="mounting"] {
-  @media (min-width: $vp-1280) and (max-width: $vp-1920) {
+  @media (min-width: $vp-1280) {
     order: 7;
   }
 }
 
 .chapters li[data-chapter="accessories"] {
-  @media (min-width: $vp-1280) and (max-width: $vp-1920) {
+  @media (min-width: $vp-1280) {
     order: 2;
   }
 }
 
 .chapters li[data-chapter="delivery"] {
-  @media (min-width: $vp-1280) and (max-width: $vp-1920) {
+  @media (min-width: $vp-1280) {
     order: 4;
   }
 }
 
 .chapters li[data-chapter="contacts"] {
-  @media (min-width: $vp-1280) and (max-width: $vp-1920) {
+  @media (min-width: $vp-1280) {
     order: 6;
   }
 }
