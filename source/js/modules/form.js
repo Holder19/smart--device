@@ -1,55 +1,64 @@
 import IMask from 'imask';
 
-const inputTel = document.querySelector('#phone-field');
-const inputName = document.querySelector('#name-field');
+const inputsTel = document.querySelectorAll('[data-input=tel]');
+const inputsName = document.querySelectorAll('[data-input=name]');
 const inputCheckbox = document.querySelector('#checkbox');
-const buttonSubmit = document.querySelector('#button-submit');
+const buttonSubmitForm = document.querySelector('#button-submit');
 const TEL_LENGTH = 16;
 
-const onInputTelChange = () => {
-  const telValue = inputTel.value.length;
-
-  if (telValue < TEL_LENGTH) {
-    inputTel.setCustomValidity('Пожалуйста введите ваш номер полностью, пример: +7(999)999-99-99');
-  } else {
-    inputTel.setCustomValidity('');
-  }
-  inputTel.reportValidity();
-
-};
-
-const onInputNameChange = () => {
-  const nameValue = inputName.value;
-
-  if (nameValue === '') {
-    inputName.setCustomValidity('Пожалуйста введите ваше имя');
-  } else {
-    inputName.setCustomValidity('');
-  }
-  inputName.reportValidity();
-};
-
-const onInputCheckboxChange = () => {
-  if (inputCheckbox.checked === false) {
-    buttonSubmit.disabled = true;
-  } else {
-    buttonSubmit.disabled = false;
-  }
-};
-
-const addListenersOnForm = () => {
-  inputTel.addEventListener('change', onInputTelChange);
-  inputName.addEventListener('change', onInputNameChange);
-  inputCheckbox.addEventListener('change', onInputCheckboxChange);
-};
-
-
-const initMask = () => {
+const initMask = (element) => {
   const maskOptions = {
     mask: '+{7}(000)000-00-00',
   };
   // eslint-disable-next-line new-cap
-  IMask(inputTel, maskOptions);
+  IMask(element, maskOptions);
 };
 
-export {initMask, addListenersOnForm};
+const addListenerOnTelChange = () => {
+  inputsTel.forEach((inputTel) => {
+    initMask(inputTel);
+
+    inputTel.addEventListener('change', () => {
+      if (inputTel.value.length < TEL_LENGTH) {
+        inputTel.setCustomValidity('Пожалуйста введите ваш номер полностью, пример: +7(999)999-99-99');
+      } else {
+        inputTel.setCustomValidity('');
+      }
+      inputTel.reportValidity();
+    });
+  });
+};
+
+const addListenerOnNameChange = () => {
+  inputsName.forEach((inputName)=> {
+
+    inputName.addEventListener('change', () => {
+      const nameValue = inputName.value;
+
+      if (nameValue === '') {
+        inputName.setCustomValidity('Пожалуйста введите ваше имя');
+      } else {
+        inputName.setCustomValidity('');
+      }
+      inputName.reportValidity();
+    });
+  });
+};
+
+const addListenerOnCheckboxChange = () => {
+  inputCheckbox.addEventListener('change', () => {
+    if (inputCheckbox.checked === false) {
+      buttonSubmitForm.disabled = true;
+    } else {
+      buttonSubmitForm.disabled = false;
+    }
+  });
+};
+
+const addListenersOnForm = () => {
+  addListenerOnTelChange();
+  addListenerOnNameChange();
+  addListenerOnCheckboxChange();
+};
+
+export {addListenersOnForm};

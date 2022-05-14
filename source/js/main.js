@@ -2,7 +2,9 @@ import {iosVhFix} from './utils/ios-vh-fix';
 import {onDetailsButtonClick} from './modules/show-more-elements';
 import {accordionToggle} from './modules/accordion';
 import {breakpointChecker} from './modules/breakpoint-checker';
-import {initMask, addListenersOnForm} from './modules/form';
+import {addListenersOnForm} from './modules/form';
+import {addHandlersOnModal} from './modules/modal';
+
 
 const detailsButton = document.querySelector('#details-button');
 
@@ -12,8 +14,8 @@ window.addEventListener('DOMContentLoaded', () => {
   accordionToggle();
   breakpointChecker();
   detailsButton.addEventListener('click', onDetailsButtonClick);
-  initMask();
   addListenersOnForm();
+  addHandlersOnModal();
 });
 
 // ---------------------------------
