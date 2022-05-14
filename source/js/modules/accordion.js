@@ -1,5 +1,5 @@
 const accordions = document.querySelectorAll('.accordion');
-const accordionsTitles = document.querySelectorAll('#accordion-title');
+const accordionsTitles = document.querySelectorAll('[data-title=accordion-title]');
 
 const accordionToggle = () => {
   accordions.forEach((accordion) => {

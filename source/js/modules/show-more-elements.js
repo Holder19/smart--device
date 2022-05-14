@@ -1,4 +1,4 @@
-const detailsItems = document.querySelectorAll('#details-item');
+const detailsItems = document.querySelectorAll('[data-content=details-item]');
 
 const onDetailsButtonClick = (button) => {
 
