@@ -29,6 +29,10 @@ body {
   height: 100%;
 }
 
+.scroll-lock {
+  overflow: hidden;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;

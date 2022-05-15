@@ -10,6 +10,10 @@
     <link rel="preload" href="fonts/ptmono.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/Robotocondensed.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/Robotocondensedbold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="img/favicons/icon.svg" sizes="any" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="img/favicons/apple-icon-180x180.png">
+    <link rel="manifest" href="manifest.webmanifest" crossorigin="use-credentials">
   </head>
   <body class="page__body">
     <header class="page__header header">
@@ -44,7 +48,7 @@
           </ul>
         </section>
         <div class="header__call">
-          <a class="button button--call" id="button-open-modal" href="#">Заказать звонок</a>
+          <a class="button button--call" data-open-modal="feedback" id="button-open-modal" href="#">Заказать звонок</a>
         </div>
       </div>
     </header>
@@ -350,37 +354,39 @@
         </div>
       </div>
     </footer>
-    <section class="modal form modal--close" id="modal">
+    <section class="modal form " data-modal="feedback" id="modal">
         <div class="form__wrapper modal__wrapper">
-          <button data-button="close" id="button-close">
-            <span class="visually-hidden">закрыть</span>
-          </button>
-          <h2>Закажите звонок</h2>
-          <p>Оставьте контакты, мы проконсультируем вас бесплатно в удобное время</p>
-          <form action="https://echo.htmlacademy.ru" method="post">
-            <ul>
-              <li data-form ="text">
-                <label for="name-field-modal"><span class="visually-hidden">Введите ваше имя</span></label>
-                <input type="text" id="name-field-modal" data-input="name" name="name" required placeholder="Имя">
-              </li>
-              <li data-form ="tel">
-                <label for="phone-field-modal"><span class="visually-hidden">Введите ваше номер</span></label>
-                <input type="tel" id="phone-field-modal" data-input="tel" name="phone" required placeholder="Телефон">
-              </li>
-              <li data-form ="textarea">
-                <label for="name-field"><span class="visually-hidden">Введите ваше имя</span></label>
-                <textarea name="question" id="question-field-modal" placeholder="Ваш вопрос"></textarea>
-              </li>
-            </ul>
-            <div class="form__submit-wrapper modal__submit-wrapper">
-              <button class="button button--submit" data-button="button-submit" id="button-submit-modal" type="submit">Отправить</button>
-              <input class="visually-hidden" data-input="checkbox" type="checkbox" name="submit-checkbox" id="checkbox-modal" checked required>
-              <label for="checkbox-modal">Я согласен на обработку  персональных данных</label>
-            </div>
-          </form>
+          <div class="modal__overlay" data-close-modal></div>
+          <div class="modal__content">
+            <button data-button="close" data-close-modal id="button-close">
+              <span class="visually-hidden">закрыть</span>
+            </button>
+            <h2>Закажите звонок</h2>
+            <p>Оставьте контакты, мы проконсультируем вас бесплатно в удобное время</p>
+            <form action="https://echo.htmlacademy.ru" method="post">
+              <ul>
+                <li data-form ="text">
+                  <label for="name-field-modal"><span class="visually-hidden">Введите ваше имя</span></label>
+                  <input data-focus type="text" id="name-field-modal" data-input="name" name="name" required placeholder="Имя">
+                </li>
+                <li data-form ="tel">
+                  <label for="phone-field-modal"><span class="visually-hidden">Введите ваше номер</span></label>
+                  <input type="tel" id="phone-field-modal" data-input="tel" name="phone" required placeholder="Телефон">
+                </li>
+                <li data-form ="textarea">
+                  <label for="name-field"><span class="visually-hidden">Введите ваше имя</span></label>
+                  <textarea name="question" id="question-field-modal" placeholder="Ваш вопрос"></textarea>
+                </li>
+              </ul>
+              <div class="form__submit-wrapper modal__submit-wrapper">
+                <button class="button button--submit" data-button="button-submit" id="button-submit-modal" type="submit">Отправить</button>
+                <input class="visually-hidden" data-input="checkbox" type="checkbox" name="submit-checkbox" id="checkbox-modal" checked required>
+                <label for="checkbox-modal">Я согласен на обработку  персональных данных</label>
+              </div>
+            </form>
+          </div>
         </div>
     </section>
-    <div id="overlay" class="overlay"></div>
     <script src="js/main.min.js"></script>
   </body>
 </html>
