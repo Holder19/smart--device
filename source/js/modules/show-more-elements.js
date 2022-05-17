@@ -1,5 +1,6 @@
 const detailsItems = document.querySelectorAll('[data-content=details-item]');
 const detailsButton = document.querySelector('#details-button');
+
 const onDetailsButtonClick = () => {
 
   detailsItems.forEach((item) => {
@@ -11,7 +12,6 @@ const onDetailsButtonClick = () => {
       detailsButton.innerText = 'Подробнее';
     }
   });
-  detailsButton.addEventListener('click', onDetailsButtonClick);
 };
 
 export {onDetailsButtonClick};

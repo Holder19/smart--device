@@ -4,13 +4,14 @@ import {accordionToggle} from './modules/accordion';
 import {breakpointChecker} from './modules/breakpoint-checker';
 import {addListenersOnForm} from './modules/form';
 import {initModals} from './modules/modals/init-modals';
+const detailsButton = document.querySelector('#details-button');
 window.addEventListener('DOMContentLoaded', () => {
   iosVhFix();
   accordionToggle();
   breakpointChecker();
   addListenersOnForm();
   initModals();
-  onDetailsButtonClick();
+  detailsButton.addEventListener('click', onDetailsButtonClick);
 });
 
 // ---------------------------------
