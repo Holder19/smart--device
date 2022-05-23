@@ -38,6 +38,8 @@
   }
 
   @media (max-width: $mobile) {
+    width: max-content;
+
     &:first-child {
       margin-bottom: 15px;
     }

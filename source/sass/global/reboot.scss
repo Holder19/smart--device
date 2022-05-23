@@ -31,6 +31,7 @@ body {
 
 .scroll-lock {
   overflow: hidden;
+  padding-right: 0;
 }
 
 .visually-hidden {
@@ -138,4 +139,19 @@ button,
 [type="reset"],
 [type="submit"] {
   appearance: none;
+}
+
+.scroll-lock-ios {
+  position: fixed;
+
+  overflow: hidden;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }

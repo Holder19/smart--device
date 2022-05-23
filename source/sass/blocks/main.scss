@@ -1,13 +1,12 @@
 .main__intro {
-  margin-bottom: 280px;
+  margin-bottom: 120px;
 
   @media (max-width: $tablet) {
-    margin-bottom: 205px;
+    margin-bottom: 80px;
   }
 
   @media (max-width: $mobile) {
-    margin-bottom: 160px;
-    min-height: 380px;
+    margin-bottom: 50px;
   }
 }
 

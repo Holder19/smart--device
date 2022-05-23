@@ -145,3 +145,10 @@
 .products__content-wrapper svg {
   fill: none;
 }
+
+.products__inner-wrapper {
+  @media (min-width: $desktop) {
+    display: grid;
+    justify-items: center;
+  }
+}

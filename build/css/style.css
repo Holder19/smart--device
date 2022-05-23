@@ -53,6 +53,7 @@ body {
 
 .scroll-lock {
   overflow: hidden;
+  padding-right: 0;
 }
 
 .visually-hidden {
@@ -180,6 +181,24 @@ button,
   appearance: none;
 }
 
+.scroll-lock-ios {
+  position: fixed;
+  overflow: hidden;
+}
+
+.scroll-lock {
+  overflow: hidden;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 .page {
   font-family: "PT Mono", "Ubuntu Mono", monospace;
   font-size: 16px;
@@ -207,10 +226,6 @@ button,
   margin: 0 18.23%;
 }
 
-.page__header {
-  padding: 30px 0;
-}
-
 .page__footer {
   padding: 50px 0 46px;
 }
@@ -220,10 +235,13 @@ button,
 }
 
 .header {
+  color: #f2f5f7;
+}
+
+.header__inner-wrapper {
   background: -webkit-gradient(linear, left top, left bottom, color-stop(84.9%, #041827), to(rgba(4, 24, 39, 0)));
   background: -o-linear-gradient(top, #041827 84.9%, rgba(4, 24, 39, 0) 100%);
   background: linear-gradient(180deg, #041827 84.9%, rgba(4, 24, 39, 0) 100%);
-  color: #f2f5f7;
 }
 
 .header__content-wrapper {
@@ -562,7 +580,7 @@ button,
 }
 
 .main__intro {
-  margin-bottom: 280px;
+  margin-bottom: 120px;
 }
 
 .main__features {
@@ -573,23 +591,13 @@ button,
   margin-bottom: 100px;
 }
 
-.intro__bg {
-  --intro-img: url("../img/content/intro-bg-desktop@1x.png");
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(71.72%, rgba(25, 32, 36, 0.7)), to(rgba(25, 32, 36, 0))), var(--intro-img) no-repeat;
-  background: -o-linear-gradient(top, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%), var(--intro-img) no-repeat;
-  background: linear-gradient(180deg, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%), var(--intro-img) no-repeat;
+.intro {
   width: 100%;
-  min-height: 880px;
-  z-index: -1;
-  position: absolute;
-  top: -115px;
-  background-size: cover;
   background-color: #041827;
 }
 
 .intro__wrapper-content {
-  z-index: 1;
-  padding: 190px 123px 120px;
+  padding: 305px 123px 120px;
   display: -ms-grid;
   display: grid;
 }
@@ -872,7 +880,7 @@ button,
 .form {
   position: relative;
   background: #00b2ff;
-  padding: 161px 0 12.99%;
+  padding: 164px 0 12.99%;
   min-height: 840px;
 }
 
@@ -1089,6 +1097,7 @@ button,
   bottom: 0;
   left: 0;
   z-index: 1000;
+  min-height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1152,9 +1161,11 @@ button,
 
 .modal__content {
   position: relative;
-  width: 510px;
-  padding: 40px;
+  width: 500px;
+  padding: 35px 40px 30px;
   background-color: #00b2ff;
+  min-height: 610px;
+  margin-right: 17px;
 }
 
 .modal.is-active {
@@ -1170,7 +1181,7 @@ button,
   font-weight: 400;
   font-size: 30px;
   line-height: 42px;
-  margin-bottom: 15px;
+  margin-bottom: 8px;
 }
 
 .modal__wrapper p {
@@ -1208,8 +1219,8 @@ button,
 
 .modal__wrapper button[data-button="close"] {
   position: absolute;
-  top: 15px;
-  right: 15px;
+  top: 10px;
+  right: 8px;
   cursor: pointer;
   width: 50px;
   height: 50px;
@@ -1248,12 +1259,37 @@ button,
 } */
 
 @media (min-width: 1024px) {
-  .header {
+  .header__inner-wrapper {
     position: fixed;
-    z-index: 1;
+    z-index: 10;
     top: 0;
     right: 0;
     left: 0;
+    padding-top: 30px;
+    padding-bottom: 35px;
+  }
+
+  .intro {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(71.72%, rgba(25, 32, 36, 0.7)), to(rgba(25, 32, 36, 0))), url("../img/content/intro-bg-desktop@1x.png") no-repeat;
+    background: -o-linear-gradient(top, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%), url("../img/content/intro-bg-desktop@1x.png") no-repeat;
+    background: linear-gradient(180deg, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%), url("../img/content/intro-bg-desktop@1x.png") no-repeat;
+    background-size: cover;
+    min-height: 880px;
+  }
+
+  .products__inner-wrapper {
+    display: -ms-grid;
+    display: grid;
+    justify-items: center;
+  }
+}
+
+@media (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1024px) and (-o-min-device-pixel-ratio: 2/1), (min-width: 1024px) and (min-resolution: 2dppx) {
+  .intro {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(71.72%, rgba(25, 32, 36, 0.7)), to(rgba(25, 32, 36, 0))), url("../img/content/intro-bg-desktop@2x.png") no-repeat;
+    background: -o-linear-gradient(top, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%), url("../img/content/intro-bg-desktop@2x.png") no-repeat;
+    background: linear-gradient(180deg, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%), url("../img/content/intro-bg-desktop@2x.png") no-repeat;
+    background-size: cover;
   }
 }
 
@@ -1319,17 +1355,37 @@ button,
   }
 }
 
+@media (min-width: 2000px) {
+  .form__wrapper {
+    max-width: -webkit-max-content;
+    max-width: -moz-max-content;
+    max-width: max-content;
+  }
+
+  .form__inner-wrapper {
+    display: -ms-grid;
+    display: grid;
+    justify-items: center;
+  }
+}
+
 @media (max-width: 1023px) {
   .page__leveler {
     margin: 0 6.51%;
   }
 
   .page__header {
-    padding: 20px 0;
+    margin-bottom: -20px;
+    position: relative;
+    z-index: 1;
   }
 
   .page__footer {
     padding: 50px 0 65px;
+  }
+
+  .header__inner-wrapper {
+    padding: 20px 0;
   }
 
   .header__content-wrapper {
@@ -1433,7 +1489,7 @@ button,
   }
 
   .main__intro {
-    margin-bottom: 205px;
+    margin-bottom: 80px;
   }
 
   .main__features {
@@ -1444,15 +1500,17 @@ button,
     margin-bottom: 80px;
   }
 
-  .intro__bg {
-    --intro-img: url("../img/content/intro-bg-tablet@1x.png");
-    top: -95px;
+  .intro {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(71.72%, rgba(25, 32, 36, 0.7)), to(rgba(25, 32, 36, 0))), url("../img/content/intro-bg-tablet@1x.png") no-repeat;
+    background: -o-linear-gradient(top, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%), url("../img/content/intro-bg-tablet@1x.png") no-repeat;
+    background: linear-gradient(180deg, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%), url("../img/content/intro-bg-tablet@1x.png") no-repeat;
     background-size: cover;
-    min-height: 640px;
+    min-height: 565px;
+    background-position: bottom;
   }
 
   .intro__wrapper-content {
-    padding: 84px 0 80px;
+    padding: 105px 0 80px;
   }
 
   .intro__wrapper-content h2 {
@@ -1580,11 +1638,12 @@ button,
 }
 
 @media (max-width: 1023px) and (-webkit-min-device-pixel-ratio: 2), (max-width: 1023px) and (-o-min-device-pixel-ratio: 2/1), (max-width: 1023px) and (min-resolution: 2dppx) {
-  .intro__bg {
-    --intro-img: url("../img/content/intro-bg-tablet@2x.png");
-    background-size: 1396px 640px;
-    background-position-x: -123px;
-    background-position-y: 0;
+  .intro {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(71.72%, rgba(25, 32, 36, 0.7)), to(rgba(25, 32, 36, 0))), url("../img/content/intro-bg-tablet@2x.png") no-repeat;
+    background: -o-linear-gradient(top, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%), url("../img/content/intro-bg-tablet@2x.png") no-repeat;
+    background: linear-gradient(180deg, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%), url("../img/content/intro-bg-tablet@2x.png") no-repeat;
+    background-position: bottom;
+    background-size: cover;
   }
 }
 
@@ -1597,12 +1656,12 @@ button,
     display: contents;
   }
 
-  .page__header {
-    padding: 15px 0 20px;
-  }
-
   .page__footer {
     padding: 35px 0;
+  }
+
+  .header__inner-wrapper {
+    padding: 15px 0 20px;
   }
 
   .header__content-wrapper {
@@ -1667,9 +1726,21 @@ button,
     padding: 20px 7.81% 23px;
   }
 
+  .chapters li {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+  }
+
   .address {
     border-bottom: 1px solid rgba(248, 253, 255, 0.7);
     padding: 20px 7.81% 17px;
+  }
+
+  .address li {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
   }
 
   .address li:first-child {
@@ -1742,8 +1813,7 @@ button,
   }
 
   .main__intro {
-    margin-bottom: 160px;
-    min-height: 380px;
+    margin-bottom: 50px;
   }
 
   .main__features {
@@ -1751,7 +1821,7 @@ button,
   }
 
   .intro__wrapper-content {
-    padding: 80px 0;
+    padding: 100px 0;
   }
 
   .intro__wrapper-content h2 {
@@ -1799,10 +1869,6 @@ button,
 
   .features__wrapper li:last-child h3 {
     margin-bottom: 15px;
-  }
-
-  .features__wrapper li:last-child p {
-    max-width: 209px;
   }
 
   .about__img-wrapper {
@@ -1933,22 +1999,28 @@ button,
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
-  .intro__bg {
-    --intro-img: url("../img/content/intro-bg-mobile@1x.png");
-    min-height: 585px;
-    background-position-y: 10px;
+  .intro {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(71.72%, rgba(25, 32, 36, 0.7)), to(rgba(25, 32, 36, 0))), url("../img/content/intro-bg-mobile@1x.png") no-repeat;
+    background: -o-linear-gradient(top, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%), url("../img/content/intro-bg-mobile@1x.png") no-repeat;
+    background: linear-gradient(180deg, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%), url("../img/content/intro-bg-mobile@1x.png") no-repeat;
+    min-height: 510px;
+    background-size: cover;
+    background-position: bottom;
   }
 }
 
 @media (min-width: 320px) and (max-width: 767px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 320px) and (max-width: 767px) and (-o-min-device-pixel-ratio: 2/1), (min-width: 320px) and (max-width: 767px) and (min-resolution: 2dppx) {
-  .intro__bg {
-    --intro-img: url("../img/content/intro-bg-mobile@2x.png");
-    background-position: -285px -20px;
+  .intro {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(71.72%, rgba(25, 32, 36, 0.7)), to(rgba(25, 32, 36, 0))), url("../img/content/intro-bg-mobile@2x.png") no-repeat;
+    background: -o-linear-gradient(top, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%), url("../img/content/intro-bg-mobile@2x.png") no-repeat;
+    background: linear-gradient(180deg, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%), url("../img/content/intro-bg-mobile@2x.png") no-repeat;
+    background-position: bottom;
+    background-size: cover;
   }
 }
 
-@media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 2dppx) {
-  .intro__bg {
-    --intro-img: url("../img/content/intro-bg-desktop@2x.png");
+@media (width: 320px) {
+  .features__wrapper li:last-child p {
+    max-width: 209px;
   }
 }

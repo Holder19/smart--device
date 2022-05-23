@@ -1,55 +1,55 @@
-.intro__bg {
-  --intro-img: url("../img/content/intro-bg-desktop@1x.png");
-  background: $intro-gradient, var(--intro-img) no-repeat;
+.intro {
   width: 100%;
-  min-height: 880px;
-  z-index: -1;
-  position: absolute;
-  top: -115px;
-  background-size: cover;
   background-color: $color-default-font;
 
-  @media (min-resolution: 2dppx) {
-    --intro-img: url("../img/content/intro-bg-desktop@2x.png");
+  @media (min-width: $desktop) {
+    background: $intro-gradient, url("../img/content/intro-bg-desktop@1x.png") no-repeat;
+    background-size: cover;
+    min-height: 880px;
+
+    @media (min-resolution: 2dppx) {
+      background: $intro-gradient, url("../img/content/intro-bg-desktop@2x.png") no-repeat;
+      background-size: cover;
+    }
   }
 
   @media (max-width: $tablet) {
-    --intro-img: url("../img/content/intro-bg-tablet@1x.png");
-    top: -95px;
+    background: $intro-gradient, url("../img/content/intro-bg-tablet@1x.png") no-repeat;
     background-size: cover;
-    min-height: 640px;
+    min-height: 565px;
+    background-position: bottom;
 
     @media (min-resolution: 2dppx) {
-      --intro-img: url("../img/content/intro-bg-tablet@2x.png");
-      background-size: 1396px 640px;
-      background-position-x: -123px;
-      background-position-y: 0;
+      background: $intro-gradient, url("../img/content/intro-bg-tablet@2x.png") no-repeat;
+      background-position: bottom;
+      background-size: cover;
     }
   }
 
   @media (min-width: $vp-320) and (max-width: $mobile) {
-    --intro-img: url("../img/content/intro-bg-mobile@1x.png");
-    min-height: 585px;
-    background-position-y: 10px;
+    background: $intro-gradient, url("../img/content/intro-bg-mobile@1x.png") no-repeat;
+    min-height: 510px;
+    background-size: cover;
+    background-position: bottom;
 
     @media (min-resolution: 2dppx) {
-      --intro-img: url("../img/content/intro-bg-mobile@2x.png");
-      background-position: -285px -20px;
+      background: $intro-gradient, url("../img/content/intro-bg-mobile@2x.png") no-repeat;
+      background-position: bottom;
+      background-size: cover;
     }
   }
 }
 
 .intro__wrapper-content {
-  z-index: 1;
-  padding: 190px 123px 120px;
+  padding: 305px 123px 120px;
   display: grid;
 
   @media (max-width: $tablet) {
-    padding: 84px 0 80px;
+    padding: 105px 0 80px;
   }
 
   @media (max-width: $mobile) {
-    padding: 80px 0;
+    padding: 100px 0;
   }
 }
 

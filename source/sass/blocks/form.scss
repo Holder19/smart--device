@@ -1,7 +1,7 @@
 .form {
   position: relative;
   background: $blue-color;
-  padding: 161px 0 12.99%;
+  padding: 164px 0 12.99%;
   min-height: 840px;
 
   &::before {
@@ -70,10 +70,21 @@
 }
 
 .form__wrapper {
+  @media (min-width: 2000px) {
+    max-width: max-content;
+  }
+
   max-width: 580px;
 
   @media (max-width: $tablet) {
     max-width: inherit;
+  }
+}
+
+.form__inner-wrapper {
+  @media (min-width: 2000px) {
+    display: grid;
+    justify-items: center;
   }
 }
 

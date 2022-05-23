@@ -112,7 +112,7 @@
 }
 
 .features__wrapper li:last-child p {
-  @media (max-width: $mobile) {
+  @media (width: $vp-320) {
     max-width: 209px;
   }
 }
